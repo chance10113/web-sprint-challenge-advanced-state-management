@@ -9,7 +9,18 @@ export const EDIT_ERROR = "EDIT_ERROR";
 // Thunk Action Goes Here
 export const getSmurf = () => {
     dispatchEvent({type: FETCH_SMURF_LOADING})
-    // axios call here
+    
+    axios
+        .get("http://localhost:3333/smurfs")
+        .then((res) => {
+            console.log("res", res)
+            console.log("res.data", res.data)
+            // dispatch({type:FETCH_SMURF_SUCCESS, payload:res.data})
+        })
+        .catch((error) => {
+            // dispatch({type:FETCH_SMURF_FAILURE, payload:error})
+            console.log(error)
+        })
 }
 
 export const fetchSmurfLoading = () => {
