@@ -24,16 +24,8 @@ const AddForm = (props) => {
     if (state.name === "" || state.position === "" || state.nickname === "") {
       props.editError("Name, position and nickname fields are required.");
     } 
-    else if (state.name !== "" || state.position !== "" || state.nickname !== ""|| state.description !== "") {
-       addSmurf()
-   }
-
-    // else (  addSmurf((state) => {
-    //     return ({
-    //         ...state, 
-    //         st
-    //     })
-    // }  ))
+    addSmurf() /* For the life of me, I just could not figure out how to do the very last part of this.
+    I have spent far too many hours, and I just... Can't. I wish that today was less of a disaster on my end. */
   };
 
   return (

@@ -35,10 +35,16 @@ export const fetchSmurfFailure = (error) => {
   return { type: FETCH_SMURF_FAILURE, payload: error };
 };
 
-export const addSmurf = (smurf) => {
-  return { type: ADD_SMURF, payload: smurf };
-};
-
+export const addSmurf = (newSmurf) => dispatch => {
+  dispatch({type: FETCH_SMURF_LOADING});
+  axios.post('http://localhost:3333/smurfs')
+      .then(res=> {
+          dispatch({type:ADD_SMURF, payload: newSmurf});
+      })
+      .catch(error=>{
+          dispatch({type:FETCH_SMURF_FAILURE, payload:error});
+      })
+}
 export const editError = (error) => {
   return { type: EDIT_ERROR, payload: error };
 };
