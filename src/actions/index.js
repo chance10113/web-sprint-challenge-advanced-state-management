@@ -5,7 +5,7 @@ export const FETCH_SMURFS_SUCCESS = "FETCH_SMURFS_SUCCESS";
 export const ADD_SMURF = "ADD_SMURF";
 export const EDIT_ERROR = "EDIT_ERROR";
 
-export const getSmurf = () => {
+export const getSmurfs = () => {
   return (dispatch) => {
     dispatch({ type: FETCH_SMURFS_LOADING });
 
