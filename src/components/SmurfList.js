@@ -12,7 +12,7 @@ const SmurfList = (props) => {
   return (
     <div className="listContainer">
       {smurfs.map((smurf, id) => (
-        <Smurf smurf={smurf} key={id} />
+        <Smurf smurf={smurf}  />
       ))}
     </div>
   );
@@ -25,7 +25,7 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps)(SmurfList);
+export default connect(mapStateToProps, {})(SmurfList);
 
 //Task List:
 //1. Connect the smurfs and loading state values to the SmurfList component.

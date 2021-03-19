@@ -33,19 +33,9 @@ export const fetchSmurfsFailure = (error) => {
   return { type: FETCH_SMURFS_FAILURE, payload: error };
 };
 
-export const addSmurf = (newSmurf) => {
-  return (dispatch) => {
-    dispatch({ type: FETCH_SMURFS_LOADING });
-    axios
-      .post("http://localhost:3333/smurfs", newSmurf)
-      .then((res) => {
-        dispatch({ type: ADD_SMURF, payload: newSmurf });
-      })
-      .catch((error) => {
-        dispatch({ type: FETCH_SMURFS_FAILURE, payload: error });
-        console.log("addSmurf Failure", error);
-      });
-  };
+export const addSmurf = (smurf) => {
+
+  return { type: ADD_SMURF, payload: smurf };
 };
 
 export const editError = (error) => {
