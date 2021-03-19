@@ -11,15 +11,11 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 
 // Actions
-import {
-  fetchSmurfsLoading,
-  fetchSmurfsSuccess,
-  fetchSmurfsFailure,
-  getSmurfs,
-} from "./actions";
+import { getSmurfs } from "./actions";
 
 class App extends Component {
   componentDidMount() {
+    const { getSmurfs } = this.props;
     getSmurfs();
   }
   render() {
@@ -36,12 +32,9 @@ class App extends Component {
   }
 }
 
-export default connect(null, {
-  fetchSmurfsLoading,
-  fetchSmurfsSuccess,
-  fetchSmurfsFailure,
-  getSmurfs,
-})(App);
+const mapDispatchToProps = { getSmurfs };
+
+export default connect(null, mapDispatchToProps)(App);
 
 //Task List:
 //1. Connect the fetchSmurfs actions to the App component.
